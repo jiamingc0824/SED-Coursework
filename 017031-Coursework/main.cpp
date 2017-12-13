@@ -1,4 +1,4 @@
-/*I have choosen the class as computer with 2 brand inherited from it. The 2 brand is then inherited by 3 model each. User 
+/*I have choosen the class as computer with 2 brand inherited from it. The 2 brand is then inherited by 3 model each. User
 can choose to buy a specific model from a brand from the menu. */
 
 #include "class.h"
@@ -16,7 +16,7 @@ int BreakPrevention(string string1) {		//This function is used as a logic error 
 											//It receive a string from the main program to be printed out to the console
 											//and receive a string from user input then return an int to the main program
 	string compare;
-	int looping = 0,testing=0;
+	int looping = 0, testing = 0;
 	cout << string1 << "\n" << "Choice: ";
 	cin >> compare;
 	cin.ignore(1000, '\n');					//Ignores the next 1000 char that the user input after a space
@@ -64,7 +64,7 @@ int BreakPrevention(string string1) {		//This function is used as a logic error 
 	{
 		looping = 1;
 		return 9;
-	} 
+	}
 	else
 	{
 		return 0;
@@ -72,7 +72,7 @@ int BreakPrevention(string string1) {		//This function is used as a logic error 
 }
 
 
-int charfix(string string1,string string2)					//This function is used as a logic error prevention when user input char 
+int charfix(string string1, string string2)					//This function is used as a logic error prevention when user input char 
 															//when the program prompt the user for an int
 															//It receive an array of char as user input and convert it into int
 															//It will return prompt user re-enter if the 1st char of the input is non-int
@@ -81,8 +81,8 @@ int charfix(string string1,string string2)					//This function is used as a logi
 	char fix[256];
 	do
 	{
-	cout << string1<<"\n"<<string2;
-	cin >> fix;
+		cout << string1 << "\n" << string2;
+		cin >> fix;
 	} while (!isdigit(fix[0]));			//Check if the 1st char if the character array of "fix" is an int
 	fixed = atoi(fix);					//Convert the character array "fix" into int
 	return fixed;
@@ -95,7 +95,7 @@ int initmenu() {			//Initializing a menu
 	cout << "= 1. Brand 1                            =" << endl;
 	cout << "= 2. Brand 2                            =" << endl;
 	cout << "= 3. Create object for Computer class   =" << endl;
-	cout << "= 4. Create object for Brand class      =" << endl;	
+	cout << "= 4. Create object for Brand class      =" << endl;
 	cout << "= 5. Check my order                     =" << endl;
 	cout << "= 6. List all order                     =" << endl;
 	cout << "= 7. I want to quit                     =" << endl;
@@ -183,7 +183,7 @@ int main()
 	int bill;			//Initializing "bill" as int
 	int brand = 0;		//Initializing and delcaring "brand"=0 as switch case
 	int brandchoice;	//Initializing "brandchoice"
-	int C=0, CB1 = 0, CB2 = 0, B1M1 = 0, B1M2 = 0, B1M3 = 0, B2M1 = 0, B2M2 = 0, B2M3 = 0; //Initializing variable to be used as array subscript
+	int C = 0, CB1 = 0, CB2 = 0, B1M1 = 0, B1M2 = 0, B1M3 = 0, B2M1 = 0, B2M2 = 0, B2M3 = 0; //Initializing variable to be used as array subscript
 	char GCardchoice;	//Initializing "GCardchoice" as char
 	bool check;			//Initializing "check" as boolean
 	string GCardModelChoice;	//Initializing "GCardModelChoice" as string
@@ -204,22 +204,22 @@ int main()
 		switch (choice)				//Switch case based on the int "choice"
 		{
 		case 1:
-		{	
+		{
 			modelchoice = initchoice(1);		//Pass an int of 1 to function "initchoice" and receive an int from it
 
 			do
 			{
 				cout << "Do you want graphics card? (Y/y/N/n)" << "\n" << "Choice: " << endl;		//Prompt user to input (Y/y/N/n) to include or not include graphics card in their computer model
 				cin >> GCardchoice;
-			} while (GCardchoice !='Y' && GCardchoice != 'y' && GCardchoice != 'N' && GCardchoice != 'n');
-			switch(GCardchoice)		//Switch case based on the char "GCardchoice"
+			} while (GCardchoice != 'Y' && GCardchoice != 'y' && GCardchoice != 'N' && GCardchoice != 'n');
+			switch (GCardchoice)		//Switch case based on the char "GCardchoice"
 			{
 			case 'Y':
 			case 'y':GCardModelChoice = GCardModel(true); check = true; break;//Pass "true" to function "GCardModel" and receive a string from it
 			case 'N':
 			case 'n':GCardModelChoice = GCardModel(false); check = false; break;//Pass "false" to function "GCardModel" and receive a string from it
 			}
-			amount = charfix("How many do you want?","Amount: ");//Pass 2 string to function "charfix" and receive an int from it
+			amount = charfix("How many computer with/without graphics card do you want?", "Amount: ");//Pass 2 string to function "charfix" and receive an int from it
 			switch (modelchoice)//Switch case based on the int "modelchoice"
 			{
 			case 1:
@@ -249,7 +249,7 @@ int main()
 			break;
 		}
 		case 2:
-		{	
+		{
 			modelchoice = initchoice(2);//Pass an int of 2 to function "initchoice" and receive an int from it	
 			do
 			{
@@ -263,7 +263,7 @@ int main()
 			case 'N':
 			case 'n':GCardModelChoice = GCardModel(false); check = false; break;	//Pass "false" to function "GCardModel" and receive a string from it
 			}
-			amount = charfix("How many do you want?","Amount: ");		//Pass 2 string to function "charfix" and receive an int from it
+			amount = charfix("How many computer with/without graphics card do you want?", "Amount: ");		//Pass 2 string to function "charfix" and receive an int from it
 			switch (modelchoice)//Switch case based on the int "modelchoice"
 			{
 			case 1:
@@ -352,7 +352,7 @@ int main()
 			else
 			{
 				for (auto list = 0; list<BillNumber; list++)		//Demonstration of dynamic binding to the pointer of the base class by looping through the base class
-					Model[list]->Specifications();				
+					Model[list]->Specifications();
 			}
 		}break;
 		case 7:
