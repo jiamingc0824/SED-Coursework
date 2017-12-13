@@ -9,7 +9,7 @@
 #define DISCOUNT 0.9
 using namespace std;
 
-class Computer
+class Computer //Base class compter
 {
 public:
 	Computer()=default;
