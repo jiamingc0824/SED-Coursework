@@ -4,8 +4,6 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include <stdlib.h>
-#include<ctype.h>
 #define DISCOUNT 0.9
 using namespace std;
 
